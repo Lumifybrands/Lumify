@@ -6,3 +6,8 @@ window.onscroll = function() {
         nav.classList.remove("shrink");
     }
 };
+
+function toggleMenu() {
+    const menuLinks = document.getElementById("menuLinks");
+    menuLinks.classList.toggle("active"); // Toggle the active class
+}

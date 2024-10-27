@@ -9,14 +9,20 @@
 <body>
         <!-- Floating Navigation Panel -->
         <nav>
-            <div class="nav-panel">
+            <div class="nav-panel" id="navbar">
                 <div class="mini_logo">
-                    <img src="Assests/IMG/mini logo.png" width="10%">
+                    <img src="Assests/IMG/mini logo.png" alt="Logo" width="10%">
                 </div>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <button class="join_btn">Join US</button>
+                <div class="menu-links" id="menuLinks">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <button class="join_btn" onclick="">Contact Us</button>
+                </div>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    ☰
+                </button>
             </div>
         </nav>
         <div class="first" >
