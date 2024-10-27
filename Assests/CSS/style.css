@@ -137,7 +137,7 @@ body, html {
 .second {
     background-color: rgba( 255, 104, 104, 1);
     width: 100vw;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     text-align: center;
     align-items: center;
@@ -382,14 +382,33 @@ footer {
     }
 
     .side-image {
+        margin-top: 5%;
         order: -1; /* Moves the image to the top */
         max-width: 100%; /* Makes the image responsive */
-        margin-bottom: 20px; /* Adds space between image and box */
+        margin-bottom: 15%; /* Adds space between image and box */
     }
 
     .box {
         width: 100%; /* Full width on mobile */
-        margin: 0; /* Resets margin */
+        height: auto;
+        margin: 0;
+        margin-bottom: 5%;
+    }
+
+    .box h2 {
+        font-size: 2em;
+    }
+
+    .box p {
+        padding-top: 10%;
+        padding-bottom: 10%;
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .view_btn {
+        padding: 10px 20px;
+        font-size: 1em;
     }
 }
 
