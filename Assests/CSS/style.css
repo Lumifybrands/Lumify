@@ -16,8 +16,7 @@
     align-items: center;
     justify-content: flex-end;
     text-align: center;
-    padding-top: 20%;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 body, html {
@@ -58,7 +57,7 @@ body, html {
 }
 
 .nav-panel a,button {
-    color: #ffffff;
+    color: #773c3c;
     margin-left: 35px; /* Adds space between links */
     text-decoration: none;
     font-size: 1.2em;
@@ -74,8 +73,32 @@ body, html {
 }
 
 .intro {
-    width: 40%;            /* Sets width to 80% of the parent element's width */
-    height: 400px;         /* Sets a fixed height */
+    width: 47%;            /* Sets width to 80% of the parent element's width */
+    height: auto;         /* Sets a fixed height */
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 80% opacity */
+    padding: 20px;               /* Adds padding inside the div */
+    border-radius: 10px;         /* Rounds the corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a subtle effect */
+
+    opacity: 0;
+    transform: scale(0.8); /* Shrinks the box */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.intro.show {
+    opacity: 1;
+    transform: scale(1); /* Resets to original size */
+}
+
+.intro:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* Deepens the shadow */
+}
+
+/* Optional: add a subtle bounce on hover */
+.intro:hover {
+    animation: bulge 0.3s ease forwards;
 }
 
 .intro h1 {
@@ -111,6 +134,122 @@ body, html {
     background-color: #e64a19; /* Darker orange on hover */
 }
 
+.second {
+    background-color: rgba( 255, 104, 104, 1);
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10%;
+}
+
+.box {
+    filter: blur(0px);
+    background-color: rgba( 255, 87, 34);
+    color: white;
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column; /* Ensures items stack vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center text alignment */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move the box down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease; /* Transition for opacity and transform */
+    flex: 1; /* Allow the box to take available space */
+    margin-right: 10%; /* Margin between box and image */
+}
+
+.box.visible {
+    opacity: 1; /* Show the box */
+    transform: translateY(0); /* Move it back to original position */
+}
+
+.side-image {
+    max-width: 40%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    flex: 1; /* Allow the image to take available space */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move the box down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease;
+}
+
+.side-image.visible {
+    opacity: 1; /* Show the box */
+    transform: translateY(0); /* Move it back to original position */
+}
+
+.side-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* Deepens the shadow */
+}
+
+/* Optional: add a subtle bounce on hover */
+.side-image:hover {
+    animation: bulge 0.3s ease forwards;
+}
+
+.box h2 {
+    font-size: 2.5em;
+}
+
+.box p {
+    padding-top: 3%;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.box button {
+    margin-top: 5%;
+    margin-right: 7%;
+}
+
+.view_btn {
+    background-color: #220e57; /* Orange background */
+    color: #ffffff;            /* White text color */
+    font-size: 16px;           /* Text size */
+    font-weight: bold;         /* Bold text */
+    padding: 12px 24px;        /* Padding for the button */
+    border: none;              /* Remove default border */
+    border-radius: 50px;       /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    justify-content: center;
+}
+
+.view_btn:hover {
+    background-color: #541291; /* Darker orange on hover */
+}
+
+/* Bulging effect on hover */
+.box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* Deepens the shadow */
+}
+
+/* Optional: add a subtle bounce on hover */
+.box:hover {
+    animation: bulge 0.3s ease forwards;
+}
+
+@keyframes bulge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
 
 /* Footer Styling */
 footer {
@@ -215,10 +354,15 @@ footer {
     .intro {
         width: 90%;
         height: auto;
+        margin-top: 65%;
+        background-color: rgba(255, 255, 255, 0.5); /* White background with 80% opacity */
+        padding: 20px;               /* Adds padding inside the div */
+        border-radius: 10px;         /* Rounds the corners */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a subtle effect */
     }
 
     .intro h1 {
-        padding-top: 60%;
         font-size: 2em;
     }
 
@@ -230,6 +374,22 @@ footer {
     .join_btn {
         padding: 10px 20px;
         font-size: 1em;
+    }
+
+    .second {
+        flex-direction: column; /* Stacks items vertically */
+        padding: 5%;
+    }
+
+    .side-image {
+        order: -1; /* Moves the image to the top */
+        max-width: 100%; /* Makes the image responsive */
+        margin-bottom: 20px; /* Adds space between image and box */
+    }
+
+    .box {
+        width: 100%; /* Full width on mobile */
+        margin: 0; /* Resets margin */
     }
 }
 
