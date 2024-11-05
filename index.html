@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMIFY - Your Digital Marketing Partner</title>
     <link rel="stylesheet" href="Assests/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
         <!-- Floating Navigation Panel -->
@@ -15,10 +16,10 @@
                 </div>
                 <div class="menu-links" id="menuLinks">
                     <a href="#">Home</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Services</a>
-                    <a href="#">Portfolio</a>
-                    <button class="join_btn" onclick="">Contact Us</button>
+                    <a href="#second">About Us</a>
+                    <a href="#footer">Services</a>
+                    <!--<a href="#">Portfolio</a>-->
+                    <a href="#third" class="boxlink">Contact Us</a>
                 </div>
                 <button class="hamburger" id="hamburger" onclick="toggleMenu()">
                     ☰
@@ -32,17 +33,82 @@
                 <button class="join_btn">Join US</button>
             </div>
         </div>
-        <div class="second">
+        <div class="second" id="second">
                 <div class="box">
                     <h2>Why Us ?</h2>
                     <p>We leverage the latest tools, analytics, and insights to stay ahead of industry trends and give you a competitive edge. No two businesses are the same. We tailor our strategies to meet your unique needs and business goals. </p>
                     <button class="view_btn">About Us</button>
                 </div>
-                <img src="Assests/IMG/img1.webp" alt="Your Image" class="side-image">
+                <img src="Assests/IMG/img1.webp" alt="Digital marketing" class="side-image">
+        </div>
+        <div class="third" id="third">
+            <div id="contact" class="contact">
+                <h2>Contact Us</h2>
+                <p>Your brand is on the right hands, our team uplift your brand by analyzing and finding best tools for you.</p>
+                <div class="button-container">
+                    <a href="https://wa.me/+918714967491" target="_blank" aria-label="WhatsApp" class="custom-link">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:lumifybrands@gmail.com" target="_blank" aria-label="Email" class="custom-email-link">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                    
+                </div>
+            </div>
         </div>
         <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 LUMIFY. All Rights Reserved.</p>
+        <footer class="footer" id="footer">
+            <div class="footer-content">
+                
+                <!-- Company Details -->
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <p>Lumify<br>
+                       Kerla, India<br>
+                       Phone: +91 87149 67491<br>
+                       Email: lumifybrands@gmail.com</p>
+                </div>
+                
+                <!-- Page Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#second">About Us</a></li>
+                        <li><a href="#footer">Services</a></li>
+                        <li><a href="#third">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#marketing">Digital Marketing</a></li>
+                        <li><a href="#seo">SEO Optimization</a></li>
+                        <li><a href="#content">Content Creation</a></li>
+                        <li><a href="#handling">Social Media Handling</a></li>
+                        <li><a href="#designing">Website Designing</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media Icons -->
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/+918714967491" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/lumify.brands" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/lumifybrands" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:lumifybrands@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 LUMIFY. All Rights Reserved.</p>
+            </div>
         </footer>
 
         <!-- Link to JavaScript file -->

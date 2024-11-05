@@ -10,7 +10,27 @@ window.onscroll = function() {
 function toggleMenu() {
     const menuLinks = document.getElementById("menuLinks");
     menuLinks.classList.toggle("active"); // Toggle the active class
+
+    // If the menu is opened, add a click event to the document
+    if (menuLinks.classList.contains("active")) {
+        document.addEventListener("click", outsideClickListener);
+    } else {
+        document.removeEventListener("click", outsideClickListener);
+    }
 }
+
+// Function to hide the menu when clicking outside
+function outsideClickListener(event) {
+    const menuLinks = document.getElementById("menuLinks");
+    const hamburger = document.getElementById("hamburger");
+
+    // Check if the click is outside the menu and the hamburger button
+    if (menuLinks.contains(event.target) && event.target !== hamburger) {
+        menuLinks.classList.remove("active"); // Hide the menu
+        document.removeEventListener("click", outsideClickListener); // Remove the listener
+    }
+}
+
 
 window.addEventListener("load", function() {
     // Add the 'show' class to the .intro div after a slight delay
@@ -33,29 +53,47 @@ function isInViewport(element) {
 function handleScroll() {
     const box = document.querySelector('.box');
     if (isInViewport(box)) {
-        setTimeout(() => {
-            box.classList.add('visible'); // Add visible class when in view
-        }, 100);
+        box.classList.add('visible'); // Add visible class when in view
     }
 }
 
 function handleScroll1() {
     const box = document.querySelector('.side-image');
     if (isInViewport(box)) {
-        setTimeout(() => {
-            box.classList.add('visible'); // Add visible class when in view
-        }, 100);
+        box.classList.add('visible'); // Add visible class when in view
     }
 }
 
-// Add event listener for scroll
+function handleScroll2() {
+    const box = document.querySelector('.contact');
+    if (isInViewport(box)) {
+        box.classList.add('visible'); // Add visible class when in view
+    }
+}
+
 window.addEventListener('scroll', handleScroll);
-
-// Optionally trigger scroll event on page load to check if the box is already in view
 window.addEventListener('load', handleScroll);
-
-// Add event listener for scroll
 window.addEventListener('scroll', handleScroll1);
-
-// Optionally trigger scroll event on page load to check if the box is already in view
 window.addEventListener('load', handleScroll1);
+window.addEventListener('scroll', handleScroll2);
+window.addEventListener('load', handleScroll2);
+
+const links = document.querySelectorAll('.menu-links a');
+const hoverBox = document.getElementById('hoverBox');
+
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        const linkRect = link.getBoundingClientRect();
+        hoverBox.style.left = `${linkRect.left}px`; // Position the hover box at the link
+        hoverBox.style.width = `${linkRect.width}px`; // Match width to the link
+        hoverBox.style.opacity = '1'; // Show the hover box
+    });
+
+    link.addEventListener('mouseleave', () => {
+        hoverBox.style.opacity = '0'; // Hide the hover box when not hovering
+    });
+});
+
+document.querySelector('.menu-links').addEventListener('mouseleave', () => {
+    hoverBox.style.opacity = '0'; // Hide when mouse leaves menu
+});

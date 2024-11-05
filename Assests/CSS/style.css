@@ -56,20 +56,43 @@ body, html {
     box-shadow: 0 2px 5px rgba(241, 106, 106, 0.2);
 }
 
-.nav-panel a,button {
-    color: #773c3c;
+.boxlink {
+    display: inline-flex;           /* Makes the icon and text align in a row */
+    align-items: center;            /* Vertically centers the icon and text */
+    padding: 10px 20px;             /* Adds padding inside the link */
+    background-color: #ff5722;
+    color: #ffffff;                 /* White text color */
+    font-size: 1em;                 /* Font size */
+    font-weight: bold;              /* Bold text */
+    text-decoration: none;          /* Removes underline */
+    border-radius: 100px;             /* Rounded corners */
+}
+
+.boxlink:hover {
+    background-color: #e44312;
+}
+
+.nav-panel a {
     margin-left: 35px; /* Adds space between links */
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s ease;
 }
 
-.nav-panel.shrink a,button {
+.nav-panel a:not(.boxlink) {
+    color: #773c3c;
+}
+
+.nav-panel.shrink a:not(.boxlink) {
     color: #f05b5b;
 }
 
-.nav-panel a:hover {
-    color: #ec970d;
+.nav-panel a:not(.boxlink):hover {
+    color: #e2730a;
+}
+
+.nav-panel.shrink a:not(.boxlink):hover {
+    color: #221f1d;
 }
 
 .intro {
@@ -116,6 +139,7 @@ body, html {
 }
 .intro button {
     margin-top: 5%;
+    margin-right: 7%;
 }
 
 .join_btn {
@@ -135,7 +159,10 @@ body, html {
 }
 
 .second {
-    background-color: rgba( 255, 104, 104, 1);
+    background-image: url('bg1.png'); /* Replace with your image path */
+    background-size: cover;         /* Adjusts the image to cover the entire background */
+    background-repeat: no-repeat;   /* Prevents the image from repeating */
+    background-position: center;    /* Centers the image */
     width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -146,9 +173,8 @@ body, html {
 }
 
 .box {
-    filter: blur(0px);
-    background-color: rgba( 255, 87, 34);
-    color: white;
+    background-color: rgba( 255, 87, 34, 0.7);
+    color: rgb(255, 255, 255);
     padding: 20px;
     width: 50%;
     display: flex;
@@ -173,10 +199,11 @@ body, html {
     max-width: 40%; /* Responsive image */
     height: auto; /* Maintain aspect ratio */
     flex: 1; /* Allow the image to take available space */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0; /* Initially hidden */
     transform: translateY(20px); /* Move the box down */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .side-image.visible {
@@ -212,8 +239,8 @@ body, html {
 }
 
 .view_btn {
-    background-color: #220e57; /* Orange background */
-    color: #ffffff;            /* White text color */
+    background-color: #ffffff; /* Orange background */
+    color: #fc2f2f;            /* White text color */
     font-size: 16px;           /* Text size */
     font-weight: bold;         /* Bold text */
     padding: 12px 24px;        /* Padding for the button */
@@ -225,7 +252,7 @@ body, html {
 }
 
 .view_btn:hover {
-    background-color: #541291; /* Darker orange on hover */
+    background-color: #ddd4d4; /* Darker orange on hover */
 }
 
 /* Bulging effect on hover */
@@ -237,6 +264,59 @@ body, html {
 /* Optional: add a subtle bounce on hover */
 .box:hover {
     animation: bulge 0.3s ease forwards;
+}
+
+.third {
+    background-color: rgb(226, 223, 223);
+    width: 100vw;
+    min-height: 20vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+
+.contact {
+    background-color: #f0f4f8;         /* Light, cool background */
+    border-radius: 12px;               /* Soft rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: rgb(17, 1, 54);
+    padding: 50px;
+    width: 60%;
+    display: flex;
+    flex-direction: column; /* Ensures items stack vertically */
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center text alignment */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move the box down */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease; /* Transition for opacity and transform */
+}
+
+.contact.visible {
+    opacity: 1; /* Show the box */
+    transform: translateY(0); /* Move it back to original position */
+}
+
+.contact h2 {
+    font-size: 2.5em;
+}
+
+.contact p {
+    padding-top: 3%;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.button-container {
+    display: flex;                  /* Aligns items in a row */
+    gap: 20px;                      /* Adds space between the links */
+    justify-content: center;        /* Centers the links horizontally */
+    margin-top: 20px;               /* Adds top margin */
 }
 
 @keyframes bulge {
@@ -251,13 +331,130 @@ body, html {
     }
 }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+.custom-link {
+    display: inline-flex;           /* Makes the icon and text align in a row */
+    align-items: center;            /* Vertically centers the icon and text */
+    padding: 10px 20px;             /* Adds padding inside the link */
+    background-color: #25D366;      /* WhatsApp green color */
+    color: #ffffff;                 /* White text color */
+    font-size: 1em;                 /* Font size */
+    font-weight: bold;              /* Bold text */
+    text-decoration: none;          /* Removes underline */
+    border-radius: 8px;             /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.custom-link i {
+    margin-right: 8px;              /* Space between icon and text */
+    font-size: 1.2em;               /* Icon size */
+}
+
+.custom-link:hover {
+    background-color: #1ebe5a;      /* Darker green on hover */
+    transform: translateY(-2px);    /* Slight lift effect */
+}
+
+.custom-link:active {
+    transform: translateY(1px);     /* Pressed effect */
+}
+
+.custom-email-link {
+    display: inline-flex;             /* Align icon and text in a row */
+    align-items: center;              /* Vertically centers the icon and text */
+    padding: 10px 20px;               /* Adds padding for button look */
+    background-color: #0078D4;        /* Blue color for email button */
+    color: #ffffff;                   /* White text color */
+    font-size: 1em;                   /* Font size */
+    font-weight: bold;                /* Bold text */
+    text-decoration: none;            /* Removes underline */
+    border-radius: 8px;               /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.custom-email-link i {
+    margin-right: 8px;                /* Space between icon and text */
+    font-size: 1.2em;                 /* Icon size */
+}
+
+.custom-email-link:hover {
+    background-color: #005A9E;        /* Darker blue on hover */
+    transform: translateY(-2px);      /* Slight lift effect */
+}
+
+.custom-email-link:active {
+    transform: translateY(1px);       /* Pressed effect */
+}
+
+/* Footer Base Styles */
+.footer {
+    background-color: #f0f4f8;            /* Light background color */
+    padding: 40px 20px;                   /* Padding around footer */
+    color: #333;                          /* Dark text color */
+}
+
+.footer-content {
+    display: flex;                        /* Flexbox for alignment */
+    justify-content: space-between;       /* Space between columns */
+    flex-wrap: wrap;                      /* Wrap columns on smaller screens */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;                              /* Even distribution */
+    min-width: 200px;                     /* Minimum width for smaller screens */
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer-column p, .footer-column ul {
     font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #0078D4;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    color: #333;
+    font-size: 1.2em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0078D4;                       /* Blue on hover */
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;           /* Optional top border for separation */
+    margin-top: 20px;
 }
 
 /* Hidden hamburger icon for larger screens */
@@ -277,6 +474,14 @@ footer {
         padding-right: 10px;
     }
 
+    .first {
+        min-height: 45vh;
+    }
+
+    .second {
+        min-height: 45vh;
+    }
+
     .menu-links {
         display: none; /* Initially hide menu links */
         flex-direction: column;
@@ -291,9 +496,16 @@ footer {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .menu-links a,button {
+    .menu-links a {
         font-size: 1em;
         margin: 10px 0;
+    }
+
+    .boxlink {
+        color: #ffffff;
+    }
+
+    .menu-links a:not(.boxlink) {
         color: #333;
     }
 
@@ -313,6 +525,10 @@ footer {
         padding-right: 10px;
     }
 
+    .first {
+        min-height: 100vh;
+    }
+
     .menu-links {
         display: none; /* Initially hide menu links */
         flex-direction: column;
@@ -325,12 +541,6 @@ footer {
         align-items: center;
         padding: 10px 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu-links a,button {
-        font-size: 1em;
-        margin: 10px 0;
-        color: #333;
     }
 
     /* Show hamburger icon on mobile */
@@ -409,6 +619,29 @@ footer {
     .view_btn {
         padding: 10px 20px;
         font-size: 1em;
+    }
+
+    .contact {
+        width: 100%; /* Increase width for smaller devices */
+        padding: 30px; /* Reduce padding for better fit */
+    }
+
+    .contact h2 {
+        font-size: 2em; /* Adjust font size for headings */
+    }
+
+    .contact p {
+        font-size: 1em; /* Adjust font size for paragraphs */
+    }
+
+    .footer-content {
+        flex-direction: column;           /* Stack columns vertically */
+    }
+    .footer-column {
+        text-align: center;               /* Center-align text */
+    }
+    .social-icons {
+        justify-content: center;          /* Center-align social icons */
     }
 }
 
