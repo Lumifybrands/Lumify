@@ -31,7 +31,6 @@ function outsideClickListener(event) {
     }
 }
 
-
 window.addEventListener("load", function() {
     // Add the 'show' class to the .intro div after a slight delay
     setTimeout(() => {
