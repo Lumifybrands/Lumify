@@ -4,272 +4,543 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumify - Let Your Brand Shine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arima:ital,wght@0,400;1,400&family=Artifika&family=Inter:wght@400&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/2/2.0.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-logo">
-                <a href="#" class="nav-logo">
-                    <img src="Assets/img/Lumify logo landscape.png" alt="Lumify Logo">
-                </a>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Lumify Logo">
             </div>
-            <!-- Hamburger Menu -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <!-- Links -->
-            <div class="links" id="nav-links">
-                <a href="#">Home</a>
-                <a href="#about">About</a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
                 <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="nav-contact">
-                <a href="#contact">Contact Us</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <div id="home" class="hero">
-        <div class="hero-img">
-            <img src="Assets/img/Lumfy logo transparent.png" alt="Lumify Logo">
-        </div>
-        <div class="hero-cont">
-            <h2>Are you ready to shine?</h2>
-            <h1>Digital Marketing Company in Kollam, Kerala</h1>
-            <p>Your brand deserves a digital presence that’s as bold and inspiring as  your vision. Let Lumify be the spark that ignites your growth and the  partner that propels you forward. Ready to make your mark? Contact us  today and let’s start creating the future of your dreams.</p>
-            <div class="her-btn">
-                <a href="#contact">Join Us</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="glitch-text">Transform Your <span class="highlight">Digital Presence</span></h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">We craft exceptional digital experiences that elevate your brand and drive meaningful results.</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="cta-button primary">Start Your Project</a>
+                    <a href="#portfolio" class="cta-button secondary">Explore Our Work</a>
+                </div>
+            </div>
+            <div class="hero-features" data-aos="fade-left">
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick turnaround without compromising quality</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Creative Design</h3>
+                    <p>Unique and modern design solutions</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Clean Code</h3>
+                    <p>Optimized and maintainable codebase</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Results Driven</h3>
+                    <p>Focus on measurable business outcomes</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="about" class="about-section">
-        <div class="about-cont">
-            <h2>About Us</h2>
-            <p>At Lumify, we believe in transforming ideas into impactful digital experiences. As a Kerala-based digital marketing agency, we combine creativity, innovation, and technical expertise to craft strategies that amplify your brand's online presence. Our services encompass a wide range of solutions, including SEO optimization, cutting-edge web design, dynamic social media campaigns, and data-driven content marketing, all tailored to align with your business goals.</p>
-            <p>We pride ourselves on delivering personalized support, ensuring every project reflects our commitment to quality, transparency, and measurable success. Lumify is not just a service provider; we’re your growth partner, working diligently to ensure your brand stands out in the crowded digital marketplace.</p>
-            <p>Let us help you light the path to your digital future.</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
-                </a>
-                <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M3.2 14.9a2.064 2.064 0 0 1-2.065-2.065v-9.6A2.064 2.064 0 0 1 3.2 1.17h9.6a2.064 2.064 0 0 1 2.065 2.065v9.6A2.064 2.064 0 0 1 12.8 14.9zm8.39-5.8h-1.45v4.8h2.67a1.066 1.066 0 0 0 1.066-1.066v-9.6a1.066 1.066 0 0 0-1.066-1.066h-9.6a1.066 1.066 0 0 0-1.066 1.066v9.6A1.066 1.066 0 0 0 3.21 13.9h5.33V9.1h-1.6V7.5h1.6v-.859c0-1.63.793-2.34 2.14-2.34c.635 0 .976.046 1.14.069h.01V5.9h-.922c-.465 0-.685.2-.751.6a2 2 0 0 0-.023.317V7.5h1.68l-.228 1.6z" clip-rule="evenodd"/></svg>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 256 256"><path fill="currentColor" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16m0 192H40V40h176zM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0m88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140m-84-56a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></svg>
-                </a>
-                <a href="https://github.com" target="_blank" class="social-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="-2 -2 24 24"><g fill="currentColor"><path d="M8.18 15.008q.18 0 .271-.012a.32.32 0 0 0 .18-.107q.09-.094.09-.274l-.004-.557q-.004-.533-.004-.844l-.188.033a2.4 2.4 0 0 1-.455.028a3.5 3.5 0 0 1-.57-.057a1.3 1.3 0 0 1-.548-.246a1.04 1.04 0 0 1-.36-.503l-.082-.189a2 2 0 0 0-.258-.417a1 1 0 0 0-.357-.312l-.057-.04a.6.6 0 0 1-.106-.1a.5.5 0 0 1-.074-.114q-.024-.057.04-.094a.5.5 0 0 1 .238-.037l.164.025q.165.032.406.196q.24.164.397.426q.189.336.455.512a.96.96 0 0 0 .536.176q.27 0 .467-.04a1.6 1.6 0 0 0 .369-.124q.073-.548.4-.843a5.6 5.6 0 0 1-.839-.148a3.4 3.4 0 0 1-.77-.32a2.2 2.2 0 0 1-.66-.548q-.26-.328-.43-.86a4.1 4.1 0 0 1-.167-1.229q0-.99.647-1.687q-.303-.745.057-1.671q.239-.075.705.11q.467.184.684.316q.217.13.348.22a5.8 5.8 0 0 1 1.573-.212q.81 0 1.573.213l.31-.197q.32-.196.754-.36q.435-.165.664-.09q.37.926.065 1.67q.648.697.648 1.688q0 .696-.168 1.233t-.434.86a2.3 2.3 0 0 1-.664.545a3.3 3.3 0 0 1-.77.32a5.6 5.6 0 0 1-.84.147q.426.368.426 1.163v1.957q0 .14.041.226a.23.23 0 0 0 .131.119q.09.032.16.04t.2.009z"/><path d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0-2h12a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4"/></g></svg>
-                </a>
-            </div>                           
+        <div class="hero-graphics">
+            <div class="floating-elements">
+                <div class="element circle"></div>
+                <div class="element square"></div>
+                <div class="element triangle"></div>
+                <div class="element wave"></div>
+                <div class="element dots"></div>
+                <div class="element lines"></div>
+                <div class="element zigzag"></div>
+                <div class="element ring"></div>
+                <div class="element hexagon"></div>
+                <div class="element spiral"></div>
+                <div class="element grid"></div>
+                <div class="element curve"></div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
+                <div class="image-container">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="services">
-        <h2>Our Services</h2>
-        <div class="carousel">
-            <div class="carousel__body">
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="particles" id="services-particles"></div>
+        <div class="floating-elements">
+            <div class="element circle"></div>
+            <div class="element square"></div>
+            <div class="element triangle"></div>
+        </div>
+        <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-desktop"></i>
+                <h3>Web Design</h3>
+                <p>Creative and responsive websites that capture your brand's essence.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-code"></i>
+                <h3>Development</h3>
+                <p>Custom software solutions and web applications built for success.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Strategic marketing campaigns that drive growth and engagement.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-share-alt"></i>
+                <h3>Social Media</h3>
+                <p>Comprehensive social media management and marketing strategies.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Branding</h3>
+                <p>Identity design and brand development that makes you stand out.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-video"></i>
+                <h3>Media Production</h3>
+                <p>High-quality content creation and media production services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="particles" id="about-particles"></div>
+        <div class="floating-elements">
+            <div class="element circle"></div>
+            <div class="element square"></div>
+            <div class="element triangle"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <h2 class="section-title">About Lumify</h2>
+                <p>At Lumify, we believe in illuminating your brand's potential through innovative digital solutions. Our team of creative experts works tirelessly to transform your vision into reality.</p>
+                <div class="stats">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <h3>20+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <h3>15+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <h3>1+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&format=webp" alt="Creative team collaboration" class="about-img" loading="lazy">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="particles" id="portfolio-particles"></div>
+        <div class="floating-elements">
+            <div class="element circle"></div>
+            <div class="element square"></div>
+            <div class="element triangle"></div>
+        </div>
+        <h2 class="section-title" data-aos="fade-up">Our Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-aos="fade-up">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/farrells/1.png" alt="Farrells" loading="lazy" class="carousel-image active">
+                            <img src="assets/farrells/2.png" alt="Farrells" loading="lazy" class="carousel-image">
+                            <img src="assets/farrells/3.png" alt="Farrells" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Farrells</h3>
+                    <p>A modern website for Farrells, featuring elegant design and smooth user experience.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                    </div>
+                    <a href="https://www.farrells.in" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/toolsland/1.png" alt="Toolsland" loading="lazy" class="carousel-image active">
+                            <img src="assets/toolsland/2.png" alt="Toolsland" loading="lazy" class="carousel-image">
+                            <img src="assets/toolsland/3.png" alt="Toolsland" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Toolsland</h3>
+                    <p>Website for interior designing company based in UAE, featuring modern design and functionality.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                    </div>
+                    <a href="https://www.toolslandts.com" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/copd-prediction/1.png" alt="COPD Prediction App" loading="lazy" class="carousel-image active">
+                            <img src="assets/copd-prediction/2.png" alt="COPD Prediction App" loading="lazy" class="carousel-image">
+                            <img src="assets/copd-prediction/3.png" alt="COPD Prediction App" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>COPD Prediction App</h3>
+                    <p>Web application developed to predict the chances of COPD disease for patients using advanced algorithms.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">Machine Learning</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/COPD-prediction-app" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/disaster-management/1.jpg" alt="Disaster Management" loading="lazy" class="carousel-image active">
+                            <img src="assets/disaster-management/2.jpg" alt="Disaster Management" loading="lazy" class="carousel-image">
+                            <img src="assets/disaster-management/3.jpg" alt="Disaster Management" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Disaster Management</h3>
+                    <p>A full-fledged, modern stylish app for managing disaster rescue operations with multiple entity dashboards.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">Dashboard</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/Disaster-Management" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/emotion-playlist/1.png" alt="Emotion-based Playlist Creator" loading="lazy" class="carousel-image active">
+                            <img src="assets/emotion-playlist/2.png" alt="Emotion-based Playlist Creator" loading="lazy" class="carousel-image">
+                            <img src="assets/emotion-playlist/3.png" alt="Emotion-based Playlist Creator" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Emotion-based Playlist Creator</h3>
+                    <p>Interactive app that detects user's face, identifies emotion, and creates personalized playlists.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">Face Detection</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/Emotion-based-playlist-creator" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/multiserve/1.jpg" alt="MultiServe" loading="lazy" class="carousel-image active">
+                            <img src="assets/multiserve/2.jpg" alt="MultiServe" loading="lazy" class="carousel-image">
+                            <img src="assets/multiserve/3.jpg" alt="MultiServe" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>MultiServe</h3>
+                    <p>An interactive modern app to avail different services on one platform with a user-friendly interface.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                        <span class="portfolio-tag">Web App</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/MultiServe" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/smart-farm/1.png" alt="Smart Farm" loading="lazy" class="carousel-image active">
+                            <img src="assets/smart-farm/2.png" alt="Smart Farm" loading="lazy" class="carousel-image">
+                            <img src="assets/smart-farm/3.png" alt="Smart Farm" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Smart Farm</h3>
+                    <p>An innovative agricultural management system with IoT integration and real-time monitoring.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">IoT</span>
+                        <span class="portfolio-tag">Web App</span>
+                        <span class="portfolio-tag">Real-time</span>
+                        <span class="portfolio-tag">Monitoring</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/Smart-Farm-AI" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="700">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/skillswap/1.png" alt="SkillSwap" loading="lazy" class="carousel-image active">
+                            <img src="assets/skillswap/2.png" alt="SkillSwap" loading="lazy" class="carousel-image">
+                            <img src="assets/skillswap/3.png" alt="SkillSwap" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>SkillSwap</h3>
+                    <p>A platform for skill exchange and learning, connecting people who want to teach and learn new skills.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Web App</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/Skill-Swap" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="portfolio-image">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <img src="assets/petcare/1.png" alt="PetCare" loading="lazy" class="carousel-image active">
+                            <img src="assets/petcare/2.png" alt="PetCare" loading="lazy" class="carousel-image">
+                            <img src="assets/petcare/3.png" alt="PetCare" loading="lazy" class="carousel-image">
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay"></div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>PetCare</h3>
+                    <p>A comprehensive pet care management system for pet owners and service providers.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Web App</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                        <span class="portfolio-tag">HTML</span>
+                        <span class="portfolio-tag">CSS</span>
+                    </div>
+                    <a href="https://github.com/2003MBS/Pet-Care" class="portfolio-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Let's Connect</h3>
+                <p class="contact-description">Feel free to reach out through any of these channels. I'm always excited to hear about new projects and opportunities!</p>
                 
-                <div class="carousel__prev">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="currentColor" d="M19.2 2.43L16.778 0L4.8 12l11.978 12l2.422-2.43L9.653 12z"/></svg>
-                </div>
-                <div class="carousel__next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="currentColor" d="M4.8 21.57L7.222 24L19.2 12L7.222 0L4.8 2.43L14.347 12z"/></svg>
-                </div>
-                <div class="carousel__slider">
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Logo Designing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Develop professional logos that embody your brand's essence and create a strong, lasting impression.</div>
-                            </div>
+                <div class="contact-methods">
+                    <a href="mailto:lumifybrands@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-info">
+                            <h4>Email</h4>
+                            <p>lumifybrands@gmail.com</p>
                         </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Email Marketing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Craft personalized, impactful email campaigns to communicate effectively with your audience, nurturing leads and driving conversions.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Online Advertisement</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Implement targeted and data-driven ad campaigns to enhance visibility and maximize ROI across digital platforms.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Web Designing And Developing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Design stunning, responsive, and user-friendly websites tailored to your business needs for optimal functionality and visual appeal.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Branding</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Build a memorable and impactful brand identity that sets you apart and connects with your audience on a deeper level.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Digital Marketing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Develop and execute customized strategies to elevate your online presence, foster engagement, and drive business growth.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Search Engine Optimization</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Optimize your website with advanced techniques to rank higher on search engines, improve visibility, and attract organic traffic.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Search Engine Marketing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Deliver results-driven paid search campaigns to generate immediate visibility, capture leads, and improve conversion rates.</div>
-                            </div>
-                        </div>
-                    </div><div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="item__heading">Social Media Marketing</div>
-                                <div class="item__divider"></div>
-                                <div class="item__paragraph">Create and manage dynamic social media campaigns that build engagement, increase brand loyalty, and drive results across platforms.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--
-    <div class="clients">
-        <h2>Our Clients</h2>
-        <div class="client-logo">
-            <div class="client-logo-img">
-                <img src="Assets/img/clients/farrells logo.png" alt="farrells industries logo">
-            </div>
-        </div>
-    </div>
-    -->-->
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <section class="contact-us-section">
-            <!-- Left Content -->
-            <div class="contact-content">
-                <p>Your brand is in the right hands. Our team uplifts your brand by analyzing and finding the best tools for you.</p>
-                <!-- Buttons -->
-                <div class="contact-buttons">
-                    <a href="https://wa.me/+918714967491" class="contact-button" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></svg>    
-                        WhatsApp
                     </a>
-                    <a href="tel:+91 87149 67491" class="contact-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 16 16"><path fill="currentColor" d="M3.714 5.258C3.523 4 4.41 2.87 5.765 2.456a.99.99 0 0 1 1.214.598l.435 1.16a1 1 0 0 1-.26 1.088L5.86 6.487a.5.5 0 0 0-.152.47l.012.052l.031.13a7.3 7.3 0 0 0 .729 1.805a7.3 7.3 0 0 0 1.296 1.627l.04.036a.5.5 0 0 0 .482.103l1.673-.527a1 1 0 0 1 1.072.319l.792.961c.33.4.29.988-.089 1.341c-1.037.967-2.463 1.165-3.455.368a12.7 12.7 0 0 1-3.024-3.529a12.4 12.4 0 0 1-1.554-4.385m3.043 1.765l1.072-.984a2 2 0 0 0 .521-2.176l-.434-1.16A1.99 1.99 0 0 0 5.473 1.5c-1.683.515-3.034 2.024-2.748 3.909c.2 1.316.661 2.99 1.678 4.738a13.7 13.7 0 0 0 3.262 3.805c1.488 1.195 3.474.787 4.764-.415a1.98 1.98 0 0 0 .179-2.708l-.792-.962a2 2 0 0 0-2.144-.636l-1.389.437a6.6 6.6 0 0 1-.936-1.223a6.3 6.3 0 0 1-.59-1.421"/></svg>
-                        Call Us
+                    
+                    <a href="tel:+15551234567" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="method-info">
+                            <h4>Call</h4>
+                            <p>+91 87149 67491</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/918714967491" class="contact-method" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="method-info">
+                            <h4>WhatsApp</h4>
+                            <p>+91 87149 67491</p>
+                        </div>
                     </a>
                 </div>
-            </div>
-        
-            <!-- Right Content (Image) -->
-            <div class="contact-image">
-                <img src="Assets/img/contact us.webp" alt="Contact Us">
-            </div>
-        </section>
-    </div>
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- About Us -->
-            <div class="footer-column">
-                <h3>About Us</h3>
-                <p>Lumify<br>
-                Kerala, India<br>
-                Phone: +91 87149 67491<br>
-                Email: <a href="mailto:lumifybrands@gmail.com">lumifybrands@gmail.com</a>
-                </p>
-            </div>
 
-            <!-- Quick Links -->
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <p><a href="#">Home</a></p>
-                <p><a href="#">About Us</a></p>
-                <p><a href="#">Our Services</a></p>
-                <p><a hreadyref="#">Our Clients</a></p>
-                <p><a href="#">Contact Us</a></p>
-            </div>
-
-            <!-- Our Services -->
-            <div class="footer-column">
-                <h3>Our Services</h3>
-                <p>Branding</p>
-                <p>Digital Marketing</p>
-                <p>Social Media Marketing</p>
-                <p>Search Engine Optimization</p>
-                <p>Search Engine Marketing</p>
-                <p>Web Designing and Development</p>
-            </div>
-
-            <!-- Follow Us -->
-            <div class="footer-column">
-                <h3>Follow Us</h3>
                 <div class="social-links">
-                    <!-- Instagram Icon -->
-                    <a href="#" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="#" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M4 12a8 8 0 1 1 9 7.938V14h2a1 1 0 1 0 0-2h-2v-2a1 1 0 0 1 1-1h.5a1 1 0 1 0 0-2H14a3 3 0 0 0-3 3v2H9a1 1 0 1 0 0 2h2v5.938A8 8 0 0 1 4 12m8 10c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"/></g></svg>
-                    </a>
-                    <!-- Twitter Icon -->
-                    <a href="#" aria-label="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m3 21l7.548-7.548M21 3l-7.548 7.548m0 0L8 3H3l7.548 10.452m2.904-2.904L21 21h-5l-5.452-7.548" color="currentColor"/></svg>
-                    </a>
-                    <!-- LinkedIn Icon -->
-                    <a href="#" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="-2 -2 24 24"><g fill="currentColor"><path d="M15 11.13v3.697h-2.143v-3.45c0-.866-.31-1.457-1.086-1.457c-.592 0-.945.398-1.1.784c-.056.138-.071.33-.071.522v3.601H8.456s.029-5.842 0-6.447H10.6v.913l-.014.021h.014v-.02c.285-.44.793-1.066 1.932-1.066c1.41 0 2.468.922 2.468 2.902M6.213 5.271C5.48 5.271 5 5.753 5 6.385c0 .62.466 1.115 1.185 1.115h.014c.748 0 1.213-.496 1.213-1.115c-.014-.632-.465-1.114-1.199-1.114m-1.086 9.556h2.144V8.38H5.127z"/><path d="M10 18a8 8 0 1 0 0-16a8 8 0 0 0 0 16m0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10s-4.477 10-10 10"/></g></svg>
-                    </a>
-                    <!-- Github Icon -->
-                    <a href="#" aria-label="github">
-                        <svg xmlnsready="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="currentColor" d="M12.001 2c-5.525 0-10 4.475-10 10a9.99 9.99 0 0 0 6.837 9.488c.5.087.688-.213.688-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.337 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.687c-.1-.25-.45-1.275.1-2.65c0 0 .837-.263 2.75 1.024a9.3 9.3 0 0 1 2.5-.337c.85 0 1.7.112 2.5.337c1.913-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.02 10.02 0 0 0 22 12c0-5.525-4.475-10-10-10"/></svg>
-                    </a>
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/company/lumifybrands/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lumify.brands/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61570093325916" target="_blank" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://github.com/Lumifybrands" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-image" data-aos="fade-left">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&format=webp" alt="Contact" loading="lazy">
+                    <div class="image-overlay"></div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Copyright -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h1 class="footer-logo">LUMIFY</h1>
+                    <p class="brand-tagline">Illuminating Digital Excellence</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/lumifybrands/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lumify.brands/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61570093325916" target="_blank" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://github.com/Lumifybrands" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Web Design</a></li>
+                            <li><a href="#services">Development</a></li>
+                            <li><a href="#services">Digital Marketing</a></li>
+                            <li><a href="#services">Branding</a></li>
+                            <li><a href="#services">Media Production</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
         <div class="footer-bottom">
-            &copy; 2024 LUMIFY. All Rights Reserved.
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Lumify. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="Assets/script/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html> 
