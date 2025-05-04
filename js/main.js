@@ -1,9 +1,12 @@
 // Initialize AOS (Animate On Scroll)
 AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
+    duration: 500,
+    easing: 'ease-out',
     once: true,
-    mirror: false
+    mirror: false,
+    offset: 50,
+    disable: 'mobile',
+    anchorPlacement: 'top-bottom'
 });
 
 // Preloader
@@ -25,21 +28,34 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with optimized behavior
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
+            block: 'start'
         });
     });
 });
 
-// Active navigation link on scroll
+// Optimized active navigation link on scroll with debounce
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+const handleScroll = debounce(() => {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -55,13 +71,15 @@ window.addEventListener('scroll', () => {
             item.classList.add('active');
         }
     });
-});
+}, 50);
 
-// Navbar scroll effect
+window.addEventListener('scroll', handleScroll);
+
+// Optimized navbar scroll effect with debounce
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
+const handleNavbarScroll = debounce(() => {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll <= 0) {
@@ -77,20 +95,20 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('scroll-up');
     }
     lastScroll = currentScroll;
-});
+}, 50);
 
-// Form validation and submission
+window.addEventListener('scroll', handleNavbarScroll);
+
+// Optimized form validation and submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
-        // Basic validation
         if (!name || !email || !message) {
             alert('Please fill in all fields');
             return;
@@ -101,10 +119,7 @@ if (contactForm) {
             return;
         }
         
-        // Here you would typically send the form data to your server
         console.log('Form submitted:', { name, email, message });
-        
-        // Reset form
         contactForm.reset();
         alert('Thank you for your message! We will get back to you soon.');
     });
@@ -244,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backdrop-filter: blur(10px);
             padding: 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            animation: slideDown 0.3s ease-in-out;
+            animation: slideDown 0.3s ease-out;
         }
         
         .mobile-nav a {
@@ -266,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         @keyframes slideDown {
             from {
-                transform: translateY(-100%);
+                transform: translateY(-20px);
                 opacity: 0;
             }
             to {
@@ -451,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createPortfolioParticles();
 });
 
-// Carousel functionality
+// Optimized carousel functionality
 function initializeCarousels() {
     const carousels = document.querySelectorAll('.carousel');
     
@@ -459,10 +474,22 @@ function initializeCarousels() {
         const images = carousel.querySelectorAll('.carousel-image');
         let currentIndex = 0;
         let interval;
+        let isTransitioning = false;
 
         function showImage(index) {
-            images.forEach(img => img.classList.remove('active'));
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            images.forEach(img => {
+                img.style.transition = 'opacity 0.3s ease-out';
+                img.classList.remove('active');
+            });
+            
             images[index].classList.add('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
         }
 
         function nextImage() {
@@ -470,26 +497,195 @@ function initializeCarousels() {
             showImage(currentIndex);
         }
 
-        // Auto-advance carousel every 5 seconds
-        interval = setInterval(nextImage, 5000);
+        interval = setInterval(nextImage, 4000); // Reduced from 5000ms to 4000ms
 
-        // Pause auto-advance when hovering over carousel
         carousel.addEventListener('mouseenter', () => {
             clearInterval(interval);
         });
 
-        // Resume auto-advance when mouse leaves carousel
         carousel.addEventListener('mouseleave', () => {
-            interval = setInterval(nextImage, 5000);
+            interval = setInterval(nextImage, 4000);
         });
 
-        // Show first image initially
         showImage(currentIndex);
     });
 }
 
-// Initialize carousels when DOM is loaded
+// Background Animation
+function createBackgroundAnimation() {
+    const container = document.querySelector('.dots-container');
+    const dotCount = 100; // Number of dots
+    
+    // Clear existing dots if any
+    container.innerHTML = '';
+    
+    for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'floating-dot';
+        
+        // Random initial position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        
+        // Random size (smaller dots)
+        const size = Math.random() * 4 + 2;
+        
+        // Random animation properties
+        const duration = Math.random() * 10 + 20;
+        const delay = Math.random() * 5;
+        
+        // Set dot styles
+        dot.style.cssText = `
+            left: ${x}%;
+            top: ${y}%;
+            width: ${size}px;
+            height: ${size}px;
+            animation: floatDot ${duration}s ${delay}s infinite linear;
+            opacity: ${Math.random() * 0.5 + 0.3};
+        `;
+        
+        container.appendChild(dot);
+    }
+}
+
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeCarousels();
-    // ... existing DOMContentLoaded code ...
-}); 
+    createBackgroundAnimation();
+    
+    // Add CSS class for mobile navigation and animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        .dots-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .floating-dot {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            filter: blur(1px);
+            pointer-events: none;
+            will-change: transform;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            background: transparent;
+        }
+
+        @keyframes floatDot {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(15px, 15px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 30px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-15px, 15px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        .mobile-nav {
+            display: flex !important;
+            flex-direction: column;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        .mobile-nav a {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-dot {
+                display: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+});
+
+// Add parallax effect to dots with improved visibility
+function handleParallax(e) {
+    const dots = document.querySelectorAll('.floating-dot');
+    const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+    dots.forEach(dot => {
+        const speed = parseFloat(dot.style.width) * 0.1; // Increased parallax effect
+        const x = mouseX * speed;
+        const y = mouseY * speed;
+        dot.style.transform = `translate(${x}px, ${y}px)`;
+    });
+}
+
+// Throttle the parallax effect for better performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Add throttled mousemove event listener
+document.addEventListener('mousemove', throttle(handleParallax, 20)); 
