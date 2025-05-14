@@ -2768,3 +2768,161 @@ body {
         box-shadow: 0 0 10px var(--primary-color);
     }
 }
+
+/* Portfolio Hidden Items */
+.hidden-item {
+    display: none;
+}
+
+/* View More Button Container */
+.view-more-container {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.view-more-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.view-more-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Clients Section */
+.clients {
+    padding: 100px 2rem;
+    background: rgba(248, 249, 250, 0.7) !important;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.client-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.client-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.client-logo {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.client-card:hover .client-logo img {
+    transform: scale(1.1);
+}
+
+.client-info {
+    flex: 1;
+}
+
+.client-info h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.client-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.client-card:hover .client-info h3::after {
+    width: 100%;
+}
+
+.client-info p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Clients Section */
+@media (max-width: 768px) {
+    .clients {
+        padding: 60px 1rem;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .client-card {
+        padding: 1.5rem;
+    }
+
+    .client-logo {
+        width: 150px;
+        height: 75px;
+        margin-bottom: 1rem;
+    }
+
+    .client-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .client-info p {
+        font-size: 0.9rem;
+    }
+}
