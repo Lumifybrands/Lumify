@@ -1,12 +1,10 @@
-// Initialize AOS (Animate On Scroll)
+// Initialize AOS with optimized settings
 AOS.init({
-    duration: 500,
+    duration: 400,
     easing: 'ease-out',
     once: true,
-    mirror: false,
     offset: 50,
-    disable: 'mobile',
-    anchorPlacement: 'top-bottom'
+    disable: 'mobile'
 });
 
 // Preloader
@@ -18,26 +16,58 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
-// Mobile Navigation
+// Mobile navigation
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-const links = document.querySelectorAll('.nav-links a');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-nav');
-    hamburger.classList.toggle('active');
-});
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
 
-// Smooth scrolling for navigation links with optimized behavior
+// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
+
+// View more projects functionality
+const viewMoreBtn = document.getElementById('view-more-btn');
+const hiddenItems = document.querySelectorAll('.hidden-item');
+let portfolioExpanded = false;
+
+if (viewMoreBtn && hiddenItems.length > 0) {
+    viewMoreBtn.addEventListener('click', () => {
+        if (!portfolioExpanded) {
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden-item');
+            });
+            viewMoreBtn.textContent = 'Show Less';
+            portfolioExpanded = true;
+        } else {
+            hiddenItems.forEach(item => {
+                item.classList.add('hidden-item');
+            });
+            viewMoreBtn.textContent = 'View More Projects';
+            portfolioExpanded = false;
+            // Scroll to portfolio section for better UX
+            const portfolioSection = document.getElementById('portfolio');
+            if (portfolioSection) {
+                portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+}
 
 // Optimized active navigation link on scroll with debounce
 const sections = document.querySelectorAll('section');
@@ -688,4 +718,17 @@ function throttle(func, limit) {
 }
 
 // Add throttled mousemove event listener
-document.addEventListener('mousemove', throttle(handleParallax, 20)); 
+document.addEventListener('mousemove', throttle(handleParallax, 20));
+
+// Back to Top button functionality
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}); 

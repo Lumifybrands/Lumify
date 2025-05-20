@@ -1,11 +1,14 @@
 /* Global Styles */
 :root {
-    --primary-color: #C84B4B;
-    --secondary-color: #2C3E50;
-    --text-color: #333;
-    --light-gray: #f5f5f5;
-    --white: #ffffff;
-    --transition: all 0.3s ease;
+    --primary-color: #B04B4B;
+    --secondary-color: #7A3232;
+    --accent-color: #F7C59F;
+    --background-color: #FFF8F6;
+    --text-color: #3A2323;
+    --white: #FFFFFF;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 18px;
+    --shadow: 0 4px 24px rgba(176, 75, 75, 0.08);
 }
 
 * {
@@ -21,12 +24,13 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', 'Inter', 'Roboto', Arial, sans-serif;
+    line-height: 1.7;
     color: var(--text-color);
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
-    background: transparent;
+    background: var(--background-color);
+    font-size: 1.08rem;
 }
 
 /* Optimize animations */
@@ -50,11 +54,10 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--white);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
     padding: 1rem 0;
     transform: translateZ(0);
     will-change: transform;
@@ -273,11 +276,11 @@ body {
 
 /* Modern Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    padding: 80px 20px;
+    background: var(--background-color);
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -419,25 +422,27 @@ body {
 
 .cta-button {
     padding: 1rem 2.5rem;
-    border-radius: 30px;
+    border-radius: var(--radius);
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    transition: var(--transition);
     position: relative;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: 1.08rem;
     letter-spacing: 0.5px;
     backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
 }
 
 .cta-button.primary {
-    background: linear-gradient(45deg, var(--primary-color), #ff6b6b);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(200, 75, 75, 0.2);
+    border: none;
+    box-shadow: 0 2px 12px rgba(176, 75, 75, 0.12);
 }
 
 .cta-button.secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--accent-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     backdrop-filter: blur(10px);
@@ -474,14 +479,14 @@ body {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--white);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
-    border-radius: 15px;
+    border-radius: var(--radius);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0e6e6;
+    box-shadow: var(--shadow);
 }
 
 .stat-card:hover {
@@ -891,7 +896,7 @@ body {
 /* Modern Services Section */
 .services {
     padding: 100px 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    background: var(--background-color) !important;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -916,14 +921,12 @@ body {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     position: relative;
     z-index: 2;
-    background: linear-gradient(45deg, var(--secondary-color), #666);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textShine 3s linear infinite;
+    background: none;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .services-grid {
@@ -937,14 +940,14 @@ body {
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     backdrop-filter: blur(10px);
     padding: 2.5rem;
-    border-radius: 20px;
+    border-radius: var(--radius);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0e6e6;
+    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
@@ -1149,7 +1152,7 @@ body {
 /* Modern About Section */
 .about {
     padding: 100px 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    background: var(--background-color) !important;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -1276,14 +1279,14 @@ body {
 }
 
 .stat-item {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 20px;
+    border-radius: var(--radius);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0e6e6;
+    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
@@ -1531,7 +1534,7 @@ body {
 /* Modern Portfolio Section */
 .portfolio {
     padding: 100px 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    background: var(--background-color) !important;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -1554,7 +1557,7 @@ body {
 }
 
 .portfolio-item {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -1616,7 +1619,7 @@ body {
 
 .portfolio-info {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease-out;
@@ -1720,7 +1723,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    background: var(--background-color) !important;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -1928,7 +1931,7 @@ body {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(26, 37, 47, 0.95) 100%);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
     color: var(--white);
     padding: 0;
     position: relative;
@@ -2005,19 +2008,17 @@ body {
 .footer-logo {
     font-size: 3.5rem;
     font-weight: 900;
-    color: var(--white);
+    color: #ffffff;
     letter-spacing: 4px;
     margin: 0;
     line-height: 1;
     position: relative;
     display: inline-block;
     text-transform: uppercase;
-    background: linear-gradient(45deg, #ffffff, #f0f0f0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
     transition: all 0.4s ease;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.377);
     padding-bottom: 0.5rem;
 }
 
@@ -2034,7 +2035,7 @@ body {
 
 .footer-logo:hover {
     transform: translateY(-2px);
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.978);
 }
 
 .footer-logo:hover::after {
@@ -2076,7 +2077,7 @@ body {
 }
 
 .footer-section h4 {
-    color: var(--white);
+    color: var(--accent-color);
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     position: relative;
@@ -2108,7 +2109,7 @@ body {
 }
 
 .footer-section ul li a {
-    color: var(--text-light);
+    color: var(--accent-color);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
@@ -2168,7 +2169,7 @@ body {
 }
 
 .footer-newsletter h4 {
-    color: var(--white);
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
@@ -2186,11 +2187,12 @@ body {
     flex: 1;
     padding: 1rem;
     border: none;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--text-color);
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    transition: var(--transition);
 }
 
 .newsletter-form input::placeholder {
@@ -2199,7 +2201,7 @@ body {
 
 .newsletter-form input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.15);
+    background: #fff9f7;
 }
 
 .newsletter-form button {
@@ -2312,14 +2314,14 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: var(--radius);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0e6e6;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2755,8 +2757,8 @@ body {
 }
 
 /* Make sections more transparent to show dots better */
-.hero, .services, .about, .portfolio, .contact {
-    background: rgba(248, 249, 250, 0.6) !important;
+.hero, .services, .about, .portfolio, .contact, .clients {
+    background: var(--background-color) !important;
 }
 
 /* Media query for mobile optimization */
@@ -2807,7 +2809,7 @@ body {
 /* Clients Section */
 .clients {
     padding: 100px 2rem;
-    background: rgba(248, 249, 250, 0.7) !important;
+    background: var(--background-color) !important;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -2824,7 +2826,7 @@ body {
 }
 
 .client-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white);
     border-radius: 20px;
     overflow: hidden;
     padding: 2rem;
